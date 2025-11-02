@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Héctor De La Rosa - CV Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 40px 30px;
+            position: relative;
+        }
+
+        .sidebar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%);
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 48px;
+            font-weight: bold;
+            box-shadow: 0 8px 16px rgba(30, 64, 175, 0.4);
+        }
+
+        .profile-section h1 {
+            font-size: 26px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-section .subtitle {
+            font-size: 13px;
+            opacity: 0.85;
+            margin-top: 5px;
+            color: #3b82f6;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            margin-bottom: 35px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 13px;
+            padding: 8px;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .contact-item i {
+            width: 30px;
+            margin-right: 12px;
+            font-size: 16px;
+            color: #3b82f6;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: #3b82f6;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 35px;
+        }
+
+        .skill-tag {
+            background: rgba(59, 130, 246, 0.15);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 500;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            background: rgba(59, 130, 246, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .language-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+        }
+
+        .language-item strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #3b82f6;
+        }
+
+        .language-bar {
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .language-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%);
+            border-radius: 3px;
+            transition: width 1s ease;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 50px;
+            background: #ffffff;
+        }
+
+        .header-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.6);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #1e40af;
+            border: 2px solid #1e40af;
+        }
+
+        .btn-secondary:hover {
+            background: #1e40af;
+            color: white;
+        }
+
+        .profile-summary {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border-left: 4px solid #1e40af;
+        }
+
+        .profile-summary h2 {
+            color: #0f172a;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .profile-summary p {
+            color: #2c3e50;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .content-section {
+            margin-bottom: 45px;
+        }
+
+        .main-content .section-title {
+            color: #0f172a;
+            border-bottom: 3px solid #1e40af;
+            padding-bottom: 12px;
+            margin-bottom: 30px;
+            font-size: 22px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 35px;
+            border-left: 3px solid #e8ecef;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            border-left-color: #1e40af;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #1e40af;
+            box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover::before {
+            transform: scale(1.3);
+            box-shadow: 0 0 0 6px rgba(30, 64, 175, 0.2);
+        }
+
+        .timeline-header {
+            margin-bottom: 12px;
+        }
+
+        .timeline-period {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-position {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .timeline-position i {
+            color: #1e40af;
+            font-size: 16px;
+        }
+
+        .timeline-company {
+            color: #1e40af;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .timeline-company i {
+            font-size: 12px;
+        }
+
+        .timeline-item ul {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .timeline-item li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .timeline-item li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #1e40af;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .timeline-item li.highlight {
+            color: #0f172a;
+            font-weight: 600;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);
+            padding: 16px 20px 16px 60px;
+            margin: 20px -10px 20px -25px;
+            border-radius: 10px;
+            border-left: 4px solid #1e40af;
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.08);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item li.highlight:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 16px rgba(30, 64, 175, 0.15);
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.12) 0%, rgba(59, 130, 246, 0.08) 100%);
+        }
+
+        .timeline-item li.highlight::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(30, 64, 175, 0.3);
+        }
+
+        .timeline-item li.highlight::after {
+            content: '★';
+            position: absolute;
+            left: 27px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .academic-highlight {
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);
+            padding: 16px 20px;
+            margin-top: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #1e40af;
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.08);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .academic-highlight:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 16px rgba(30, 64, 175, 0.15);
+        }
+
+        .academic-highlight::before {
+            content: '';
+            position: absolute;
+            left: -16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            border-radius: 50%;
+            box-shadow: 0 3px 10px rgba(30, 64, 175, 0.3);
+        }
+
+        .academic-highlight::after {
+            content: '★';
+            position: absolute;
+            left: -9px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .academic-highlight-text {
+            color: #0f172a;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1.6;
+            padding-left: 20px;
+        }
+
+        .highlight-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-left: 10px;
+            box-shadow: 0 2px 8px rgba(30, 64, 175, 0.25);
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 12px;
+            border-left: 5px solid #1e40af;
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .education-degree {
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 17px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .education-degree i {
+            color: #1e40af;
+        }
+
+        .education-institution {
+            color: #1e40af;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .achievement-card {
+            padding: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 12px;
+            border: 2px solid #e8ecef;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(30, 64, 175, 0.2);
+            border-color: #1e40af;
+        }
+
+        .achievement-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .achievement-title {
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        .achievement-detail {
+            color: #1e40af;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .reference-card {
+            padding: 25px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 12px;
+            border: 2px solid #e8ecef;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .reference-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%);
+        }
+
+        .reference-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(30, 64, 175, 0.2);
+            border-color: #1e40af;
+        }
+
+        .reference-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .reference-name {
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+            font-size: 17px;
+        }
+
+        .reference-position {
+            color: #4a5568;
+            font-size: 13px;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .reference-phone {
+            color: #1e40af;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(30, 64, 175, 0.3);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .header-actions {
+                display: none;
+            }
+        }
+
+        @media (max-width: 968px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            body {
+                padding: 10px;
+            }
+
+            .main-content {
+                padding: 30px 25px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .achievements-grid,
+            .references-grid,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-photo">HD</div>
+                <h1>Héctor De La Rosa</h1>
+                <p class="subtitle">Ingeniero Electromecánico</p>
+                <p class="subtitle">Especialista en Sistemas Eléctricos</p>
+            </div>
+
+            <div class="contact-info">
+                <h3 class="section-title"><i class="fas fa-address-card"></i> Contacto</h3>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Rotcehdg@outlook.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>809-408-3350</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Santo Domingo Norte, RD</span>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="section-title"><i class="fas fa-code"></i> Habilidades</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">AutoCAD</span>
+                    <span class="skill-tag">Sketchup</span>
+                    <span class="skill-tag">MS Office</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">DigSilent</span>
+                    <span class="skill-tag">GAMS</span>
+                    <span class="skill-tag">Maple</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Julia</span>
+                    <span class="skill-tag">Javascript</span>
+                    <span class="skill-tag">LaTeX</span>
+                    <span class="skill-tag">Markdown</span>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="section-title"><i class="fas fa-language"></i> Idiomas</h3>
+                <div class="language-item">
+                    <strong>Español</strong>
+                    <span>Nativo</span>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <strong>Inglés</strong>
+                    <span>Intermedio</span>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 65%"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header-actions">
+                <button class="btn btn-primary" onclick="window.print()">
+                    <i class="fas fa-print"></i> Imprimir
+                </button>
+            </div>
+
+            <!-- Perfil Profesional -->
+            <div class="profile-summary">
+                <h2><i class="fas fa-user-circle"></i> Perfil Profesional</h2>
+                <p>
+                    Ingeniero Electromecánico con especialización en sistemas eléctricos de potencia y mercados energéticos. 
+                    Experiencia sólida en programación y optimización de operaciones del Sistema Eléctrico Nacional Interconectado (SENI), 
+                    con capacidad analítica para desarrollar modelos de simulación y realizar estudios energéticos complejos. 
+                    Comprometido con la eficiencia operativa y la innovación en el sector eléctrico de República Dominicana.
+                </p>
+            </div>
+
+            <!-- Estadísticas Destacadas -->
+            <!-- <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Años de Experiencia</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">14+</div>
+                    <div class="stat-label">Habilidades Técnicas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Reconocimientos</div>
+                </div>
+            </div> -->
+
+            <!-- Educación -->
+            <section class="content-section">
+                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Formación Académica</h2>
+                <div class="education-item">
+                    <div class="timeline-period">2025 – Actualidad</div>
+                    <div class="education-degree">
+                        <i class="fas fa-certificate"></i>
+                        Maestría en Mercados Eléctricos
+                    </div>
+                    <div class="education-institution">Universidad Autónoma de Santo Domingo (UASD)</div>
+                </div>
+                <div class="education-item">
+                    <div class="timeline-period">2019 – 2024</div>
+                    <div class="education-degree">
+                        <i class="fas fa-user-graduate"></i>
+                        Ingeniería Electromecánica mención Eléctrica
+                    </div>
+                    <div class="education-institution">Universidad Autónoma de Santo Domingo (UASD)</div>
+                    <div class="academic-highlight">
+                        <div class="academic-highlight-text">
+                            Estudiante Meritorio en todos los años que se realizó la premiación
+                            <span class="highlight-badge">Distinción Académica</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experiencia Profesional -->
+            <section class="content-section">
+                <h2 class="section-title"><i class="fas fa-briefcase"></i> Experiencia Profesional</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-period">Enero 2025 – Actualidad</span>
+                        <div class="timeline-position">
+                            <i class="fas fa-chart-line"></i>
+                            Analista de Programación de la Operación
+                        </div>
+                        <div class="timeline-company">
+                            <i class="fas fa-building"></i>
+                            Organismo Coordinador (OC)
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Desarrollar y validar modelos para simulación y optimización de la programación de corto plazo del SENI</li>
+                        <li>Realizar programación semanal y diaria del Sistema Eléctrico Nacional Interconectado cumpliendo normativa vigente</li>
+                        <li>Planificar y analizar la programación de operación de corto plazo en horizontes semanales y diarios</li>
+                        <li>Analizar solicitudes de pruebas de generación y carga, y programas de mantenimiento de redes</li>
+                        <li>Realizar estudios y proyectos de análisis eléctricos y energéticos sobre la programación del SENI</li>
+                        <li>Colaborar en cálculo y verificación de costos variables de producción de centrales térmicas</li>
+                        <li>Realizar proyecciones de demanda del SENI y generación renovable variable para corto plazo</li>
+                        <li class="highlight">
+                            Implementar modelo de limitación de generación renovable por seguridad del SENI en el Modelo de Toma de Decisiones de la Programación de Corto Plazo (MODOM)
+                            <span class="highlight-badge">Innovación Técnica</span>
+                        </li>
+                        <li class="highlight">
+                            Desarrollar e implementar algoritmo para cálculo de inercia y energía rotacional del sistema en base horaria
+                            <span class="highlight-badge">Desarrollo Propio</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-period">Junio 2024 – Enero 2025</span>
+                        <div class="timeline-position">
+                            <i class="fas fa-user-tie"></i>
+                            Pasante
+                        </div>
+                        <div class="timeline-company">
+                            <i class="fas fa-building"></i>
+                            Organismo Coordinador (OC)
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Ejecutar programación semanal y diaria del Sistema Eléctrico Nacional Interconectado</li>
+                        <li>Validar programas de mantenimiento de redes de transmisión en planificación de corto plazo</li>
+                        <li>Analizar y aprobar pruebas operativas de centrales eléctricas del SENI</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-period">Agosto 2023 – Actualidad</span>
+                        <div class="timeline-position">
+                            <i class="fas fa-flask"></i>
+                            Auxiliar de Investigación
+                        </div>
+                        <div class="timeline-company">
+                            <i class="fas fa-university"></i>
+                            Instituto de Energía - UASD
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Participar en seguimiento de proyectos supervisando presupuestos y cronogramas de investigación</li>
+                        <li>Colaborar en elaboración de propuestas para fortalecer iniciativas del sector eléctrico nacional</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-period">Junio 2023 – Noviembre 2023</span>
+                        <div class="timeline-position">
+                            <i class="fas fa-solar-panel"></i>
+                            Analista de Operaciones
+                        </div>
+                        <div class="timeline-company">
+                            <i class="fas fa-tools"></i>
+                            Servicios Técnicos - Conexyner
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Gestionar instalación de sistemas fotovoltaicos: diseño, planificación y supervisión</li>
+                        <li>Diseñar y desarrollar controles eléctricos automatizados para optimización de sistemas</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-period">Febrero 2021 – Agosto 2024</span>
+                        <div class="timeline-position">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            Auxiliar Docente - Monitor de Matemáticas
+                        </div>
+                        <div class="timeline-company">
+                            <i class="fas fa-university"></i>
+                            UASD
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Impartir clases auxiliares de matemáticas a estudiantes de diversas carreras</li>
+                        <li>Asistir en planificación y ejecución de prácticas académicas</li>
+                        <li>Elaborar y corregir evaluaciones garantizando objetividad en medición del desempeño</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Capacitaciones -->
+            <section class="content-section">
+                <h2 class="section-title"><i class="fas fa-certificate"></i> Capacitaciones Especializadas</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-bolt"></i></div>
+                        <div class="achievement-title">Modelado y Optimización del Despacho de Centrales en Sistemas Eléctricos</div>
+                        <div class="achievement-detail">Universidad de Sevilla • 2025</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-chart-area"></i></div>
+                        <div class="achievement-title">Power System Economic Dispatch: Storage & Carbon Modeling</div>
+                        <div class="achievement-detail">Udemy • 2025</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reconocimientos -->
+            <section class="content-section">
+                <h2 class="section-title"><i class="fas fa-trophy"></i> Reconocimientos & Participaciones</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-award"></i></div>
+                        <div class="achievement-title">Premio Producción Más Limpia</div>
+                        <div class="achievement-detail">7ma Edición 2023 - Medio Ambiente • Febrero 2024</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-microscope"></i></div>
+                        <div class="achievement-title">IX Congreso Estudiantil CEICYT</div>
+                        <div class="achievement-detail">MESCYT • Septiembre 2024</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-lightbulb"></i></div>
+                        <div class="achievement-title">III Congreso IDI y XXII JIC</div>
+                        <div class="achievement-detail">UASD • Noviembre 2024</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Referencias -->
+            <section class="content-section">
+                <h2 class="section-title"><i class="fas fa-user-friends"></i> Referencias Profesionales</h2>
+                <div class="references-grid">
+                    <div class="reference-card">
+                        <div class="reference-icon"><i class="fas fa-user"></i></div>
+                        <div class="reference-name">Samuel González</div>
+                        <div class="reference-position">
+                            Superintendente Comercial y Operativo<br>
+                            Energas (Interenergy)
+                        </div>
+                        <div class="reference-phone">
+                            <i class="fas fa-phone"></i> 809-855-8384
+                        </div>
+                    </div>
+                    <div class="reference-card">
+                        <div class="reference-icon"><i class="fas fa-user"></i></div>
+                        <div class="reference-name">Zacarías Navarro</div>
+                        <div class="reference-position">
+                            Director de Investigaciones<br>
+                            Facultad de Ingeniería y Arquitectura - UASD
+                        </div>
+                        <div class="reference-phone">
+                            <i class="fas fa-phone"></i> 809-257-0826
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
